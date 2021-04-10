@@ -2,35 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace intro_to_algorithms_practice.Algorithms.InsertionSort
+namespace intro_to_algorithms_practice.Models.Algorithms.InsertionSort
 {
     class InsertionSort
     {
-        public List<int> InputList { get; set; }
-        public List<int> OutputList { get; set; }
+        public InsertionSort() {}
 
-        public InsertionSort()
+        public List<int> Execute(List<int> InputList)
         {
-            InputList = new List<int>() { 5, 2, 4, 6, 1, 3 };
-        }
-
-        public void PrintStates()
-        {
-            Console.WriteLine(String.Join(", ", InputList));
-
-            if (OutputList != null && OutputList.Count > 0)
-            {
-                Console.WriteLine(String.Join(", ", OutputList));
-            }
-            else
-            {
-                Console.WriteLine("Sort incomplete.");
-            }
-        }
-
-        public void ExecuteInsertionSort()
-        {
-            OutputList = new List<int>(InputList);
+            List<int> OutputList = new List<int>(InputList);
 
             for (int startingIndex = 1; startingIndex < OutputList.Count; startingIndex++)
             {
@@ -50,6 +30,8 @@ namespace intro_to_algorithms_practice.Algorithms.InsertionSort
             }
 
             Console.WriteLine("Sort successful.");
+
+            return OutputList;
         }
     }
 }
