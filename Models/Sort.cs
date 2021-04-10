@@ -1,7 +1,7 @@
 ﻿using intro_to_algorithms_practice.Models.Algorithms.InsertionSort;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace intro_to_algorithms_practice.Models
 {
@@ -14,18 +14,24 @@ namespace intro_to_algorithms_practice.Models
             InsertionSort = new InsertionSort();
         }
 
-        public void PrintResult(List<int> InputList, List<int> OutputList)
+        public void PrintResult(List<int> inputList, List<int> outputList = null)
         {
-            Console.WriteLine(String.Join(", ", InputList));
+            Console.WriteLine("[{0}]", String.Join(", ", inputList));
 
-            if (OutputList != null && OutputList.Count > 0)
+            if (outputList != null && outputList.Count > 0)
             {
-                Console.WriteLine(String.Join(", ", OutputList));
+                Console.WriteLine("[{0}]", String.Join(", ", outputList));
             }
-            else
-            {
-                Console.WriteLine("Sort incomplete.");
-            }
+        }
+
+        public List<int> GetParsedUserInput()
+        {
+            string userInput = Console.ReadLine();
+            string[] parsedUserInputArray = userInput.Trim().Replace(" ", String.Empty).Split(',');
+
+            List<int> parsedUserInputList = parsedUserInputArray.Select(element => Convert.ToInt32(element)).ToList();
+
+            return parsedUserInputList;
         }
     }
 }
