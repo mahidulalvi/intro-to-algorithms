@@ -1,7 +1,6 @@
 ﻿using intro_to_algorithms_practice.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace intro_to_algorithms_practice
 {
@@ -13,21 +12,29 @@ namespace intro_to_algorithms_practice
 
             var sort = new Sort();
 
-            Console.WriteLine("Press 1 to execute insertion sort.");
+            Console.WriteLine("\nPlease enter some integers separated by comma.");
+
+            List<int> inputList = sort.GetParsedUserInput();
+
+            Console.WriteLine("\nYour input was parsed into the following array:");
+            
+            sort.PrintResult(inputList);
+
+            Console.WriteLine("\nPress 1 to select insertion sort.");
 
             var startSorting = Console.ReadLine();
 
             if (startSorting == "1")
             {
-                Console.WriteLine("Insertion sort selected.");
-                Console.WriteLine("Please enter some numbers separated by comma.");
+                bool isNonIncreasingOrderSelected = sort.InsertionSort.GetSortingOrderFromUser();
 
-                string userInput = Console.ReadLine();
-                string[] userInputArray = userInput.Trim().Replace(" ", String.Empty).Split(',');
+                string selectedOrderText = isNonIncreasingOrderSelected ? "Nonincreasing" : "Nondecreasing";
 
-                List<int> inputList = userInputArray.Select(element => Convert.ToInt32(element)).ToList();
+                Console.WriteLine($"\n{selectedOrderText} insertion method selected.\n");
 
-                List<int> outputList = sort.InsertionSort.Execute(inputList);
+                List<int> outputList = sort.InsertionSort.Execute(inputList, isNonIncreasingOrderSelected);
+
+                Console.WriteLine("\nResults:");
 
                 sort.PrintResult(inputList, outputList);
             }

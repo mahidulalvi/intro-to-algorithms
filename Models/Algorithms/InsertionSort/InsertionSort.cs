@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace intro_to_algorithms_practice.Models.Algorithms.InsertionSort
 {
@@ -8,7 +7,19 @@ namespace intro_to_algorithms_practice.Models.Algorithms.InsertionSort
     {
         public InsertionSort() {}
 
-        public List<int> Execute(List<int> InputList)
+        private bool ValuesComparator(int comparingValue, int referenceValue, bool nonIncreasingOrder)
+        {
+            if (!nonIncreasingOrder)
+            {
+                return comparingValue > referenceValue;
+            }
+            else
+            {
+                return comparingValue < referenceValue;
+            }
+        }
+
+        public List<int> Execute(List<int> InputList, bool isNonIncreasingOrder = false)
         {
             List<int> OutputList = new List<int>(InputList);
 
@@ -17,7 +28,7 @@ namespace intro_to_algorithms_practice.Models.Algorithms.InsertionSort
                 int referenceValue = InputList[startingIndex];
                 int previousIndex = startingIndex - 1;
 
-                while (previousIndex > -1 && OutputList[previousIndex] > referenceValue)
+                while (previousIndex > -1 && ValuesComparator(OutputList[previousIndex], referenceValue, isNonIncreasingOrder))
                 {
                     var valueToShiftRight = OutputList[previousIndex];
 
@@ -32,6 +43,15 @@ namespace intro_to_algorithms_practice.Models.Algorithms.InsertionSort
             Console.WriteLine("Sort successful.");
 
             return OutputList;
+        }
+
+        public bool GetSortingOrderFromUser()
+        {
+            Console.WriteLine("\nPlease select the order of sorting.\nPress 1 for nondecreasing or 2 for nonincreasing order.");
+
+            string insertionSortOrder = Console.ReadLine();
+            
+            return insertionSortOrder == "2";
         }
     }
 }
