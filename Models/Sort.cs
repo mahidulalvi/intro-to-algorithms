@@ -1,9 +1,9 @@
-﻿using intro_to_algorithms_practice.Models.Algorithms.InsertionSort;
+﻿using IntroToAlgorithms.Models.Algorithms.InsertionSort;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace intro_to_algorithms_practice.Models
+namespace IntroToAlgorithms.Models
 {
     class Sort
     {
