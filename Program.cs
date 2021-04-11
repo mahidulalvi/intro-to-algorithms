@@ -1,8 +1,8 @@
-﻿using intro_to_algorithms_practice.Models;
+﻿using IntroToAlgorithms.Models;
 using System;
 using System.Collections.Generic;
 
-namespace intro_to_algorithms_practice
+namespace IntroToAlgorithms
 {
     class Program
     {
@@ -17,7 +17,7 @@ namespace intro_to_algorithms_practice
             List<int> inputList = sort.GetParsedUserInput();
 
             Console.WriteLine("\nYour input was parsed into the following array:");
-            
+
             sort.PrintResult(inputList);
 
             Console.WriteLine("\nPress 1 to select insertion sort.");

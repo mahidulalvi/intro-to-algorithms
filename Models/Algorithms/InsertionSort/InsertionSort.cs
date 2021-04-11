@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace intro_to_algorithms_practice.Models.Algorithms.InsertionSort
+namespace IntroToAlgorithms.Models.Algorithms.InsertionSort
 {
     class InsertionSort
     {
-        public InsertionSort() {}
+        public InsertionSort() { }
 
         private bool ValuesComparator(int comparingValue, int referenceValue, bool nonIncreasingOrder)
         {
@@ -50,7 +50,7 @@ namespace intro_to_algorithms_practice.Models.Algorithms.InsertionSort
             Console.WriteLine("\nPlease select the order of sorting.\nPress 1 for nondecreasing or 2 for nonincreasing order.");
 
             string insertionSortOrder = Console.ReadLine();
-            
+
             return insertionSortOrder == "2";
         }
     }
