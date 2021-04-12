@@ -12,31 +12,13 @@ namespace IntroToAlgorithms
 
             var sort = new Sort();
 
-            Console.WriteLine("\nPlease enter some integers separated by comma.");
-
-            List<int> inputList = sort.GetParsedUserInput();
-
-            Console.WriteLine("\nYour input was parsed into the following array:");
-
-            sort.PrintResult(inputList);
-
             Console.WriteLine("\nPress 1 to select insertion sort.");
 
-            var startSorting = Console.ReadLine();
+            var selectedAlgorithm = Console.ReadLine();
 
-            if (startSorting == "1")
+            if (selectedAlgorithm == "1")
             {
-                bool isNonIncreasingOrderSelected = sort.InsertionSort.GetSortingOrderFromUser();
-
-                string selectedOrderText = isNonIncreasingOrderSelected ? "Nonincreasing" : "Nondecreasing";
-
-                Console.WriteLine($"\n{selectedOrderText} insertion method selected.\n");
-
-                List<int> outputList = sort.InsertionSort.Execute(inputList, isNonIncreasingOrderSelected);
-
-                Console.WriteLine("\nResults:");
-
-                sort.PrintResult(inputList, outputList);
+                sort.InsertionSort.Initialize();
             }
 
         }
