@@ -1,6 +1,5 @@
 ﻿using IntroToAlgorithms.Models;
 using System;
-using System.Collections.Generic;
 
 namespace IntroToAlgorithms
 {
@@ -18,7 +17,7 @@ namespace IntroToAlgorithms
 
             if (selectedAlgorithm == "1")
             {
-                sort.InsertionSort.Initialize();
+                sort.InsertionAlgorithms.Initialize();
             }
 
         }
