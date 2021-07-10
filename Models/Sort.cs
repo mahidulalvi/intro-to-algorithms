@@ -1,16 +1,14 @@
-﻿using IntroToAlgorithms.Models.Algorithms.InsertionSort;
-using System;
-using System.Collections.Generic;
+﻿using IntroToAlgorithms.Models.Algorithms.InsertionAlgorithms;
 
 namespace IntroToAlgorithms.Models
 {
     class Sort
     {
-        public InsertionSort InsertionSort { get; set; }
+        public InsertionAlgorithms InsertionAlgorithms { get; set; }
 
         public Sort()
         {
-            InsertionSort = new InsertionSort();
+            InsertionAlgorithms = new InsertionAlgorithms();
         }
     }
 }
