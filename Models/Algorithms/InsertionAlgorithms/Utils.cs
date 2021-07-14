@@ -27,5 +27,14 @@ namespace IntroToAlgorithms.Models.Algorithms.InsertionAlgorithms
 
             return parsedUserInputList;
         }
+
+        public string GetSortingOrderFromUser()
+        {
+            Console.WriteLine("\nPlease select the order of sorting.\nPress 1 for nondecreasing or 2 for nonincreasing order.");
+
+            string sortingOrder = Console.ReadLine();
+
+            return sortingOrder;
+        }
     }
 }

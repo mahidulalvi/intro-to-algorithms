@@ -23,42 +23,33 @@ namespace IntroToAlgorithms.Models.Algorithms.InsertionAlgorithms
             }
         }
 
-        public string GetSortingOrderFromUser()
-        {
-            Console.WriteLine("\nPlease select the order of sorting.\nPress 1 for nondecreasing or 2 for nonincreasing order.");
-
-            string insertionSortOrder = Console.ReadLine();
-
-            return insertionSortOrder;
-        }
-
         public List<int> ExecuteInsertionSort(List<int> inputList, bool isNonIncreasingOrder = false)
         {
-            List<int> OutputList = new List<int>(inputList);
+            List<int> outputList = new List<int>(inputList);
 
-            Utils.PrintResult(OutputList);
+            Utils.PrintResult(outputList);
 
-            for (int startingIndex = 1; startingIndex < OutputList.Count; startingIndex++)
+            for (int startingIndex = 1; startingIndex < outputList.Count; startingIndex++)
             {
                 int referenceValue = inputList[startingIndex];
                 int previousIndex = startingIndex - 1;
 
-                while (previousIndex > -1 && ValuesComparator(OutputList[previousIndex], referenceValue, isNonIncreasingOrder))
+                while (previousIndex > -1 && ValuesComparator(outputList[previousIndex], referenceValue, isNonIncreasingOrder))
                 {
-                    var valueToShiftRight = OutputList[previousIndex];
+                    var valueToShiftRight = outputList[previousIndex];
 
-                    OutputList[previousIndex + 1] = valueToShiftRight;
+                    outputList[previousIndex + 1] = valueToShiftRight;
                     previousIndex = previousIndex - 1;
                 }
 
 
-                OutputList[previousIndex + 1] = referenceValue;
-                Utils.PrintResult(OutputList);
+                outputList[previousIndex + 1] = referenceValue;
+                Utils.PrintResult(outputList);
             }
 
             Console.WriteLine("Sort successful.");
 
-            return OutputList;
+            return outputList;
         }
 
         public void RunInsertionSortApplication()
@@ -71,7 +62,7 @@ namespace IntroToAlgorithms.Models.Algorithms.InsertionAlgorithms
 
             Utils.PrintResult(inputList);
 
-            bool isNonIncreasingOrderSelected = GetSortingOrderFromUser() == "2";
+            bool isNonIncreasingOrderSelected = Utils.GetSortingOrderFromUser() == "2";
 
             string selectedOrderText = isNonIncreasingOrderSelected ? "Nonincreasing" : "Nondecreasing";
 

@@ -7,6 +7,7 @@ namespace IntroToAlgorithms.Models.Algorithms.InsertionAlgorithms
         public InsertionSortModule InsertionSortModule { get; set; }
         public BinaryAdditionModule BinaryAdditionModule { get; set; }
         public LinearSearchModule LinearSearchModule { get; set; }
+        public SelectionSortModule SelectionSortModule { get; set; }
         public Utils Utils { get; set; }
 
         public InsertionAlgorithms()
@@ -14,6 +15,7 @@ namespace IntroToAlgorithms.Models.Algorithms.InsertionAlgorithms
             InsertionSortModule = new InsertionSortModule();
             BinaryAdditionModule = new BinaryAdditionModule();
             LinearSearchModule = new LinearSearchModule();
+            SelectionSortModule = new SelectionSortModule();
             Utils = new Utils();
         }
 
@@ -22,7 +24,8 @@ namespace IntroToAlgorithms.Models.Algorithms.InsertionAlgorithms
             Console.WriteLine("\nPlease select an application.");
             Console.WriteLine("1. Insertion Sort");
             Console.WriteLine("2. Linear Search");
-            Console.WriteLine("3. Binary Addition\n");
+            Console.WriteLine("3. Binary Addition");
+            Console.WriteLine("4. Selection Sort\n");
 
             string selectedApplication = Console.ReadLine();
 
@@ -37,6 +40,10 @@ namespace IntroToAlgorithms.Models.Algorithms.InsertionAlgorithms
             else if (selectedApplication == "3")
             {
                 BinaryAdditionModule.RunBinaryAdditionApplication();
+            }
+            else if (selectedApplication == "4")
+            {
+                SelectionSortModule.RunSelectionSortApplication();
             }
         }
     }
