@@ -11,7 +11,7 @@ namespace IntroToAlgorithms
 
             var sort = new Sort();
 
-            Console.WriteLine("\nPress 1 to select insertion sort.");
+            Console.WriteLine("\nPress 1 to select insertion algorithms.");
 
             var selectedAlgorithm = Console.ReadLine();
 
