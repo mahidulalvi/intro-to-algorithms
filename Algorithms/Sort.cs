@@ -1,8 +1,8 @@
-﻿using IntroToAlgorithms.Models.Algorithms.InsertionAlgorithms;
+﻿using IntroToAlgorithms.Algorithms.Insertion;
 
-namespace IntroToAlgorithms.Models
+namespace IntroToAlgorithms.Algorithms
 {
-    class Sort
+    public class Sort
     {
         public InsertionAlgorithms InsertionAlgorithms { get; set; }
 

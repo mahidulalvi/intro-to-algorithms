@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace IntroToAlgorithms.Models.Algorithms.InsertionAlgorithms
+namespace IntroToAlgorithms.Algorithms.Insertion.Modules
 {
-    class InsertionSortModule
+    public class InsertionSortModule
     {
         public Utils Utils { get; set; }
         public InsertionSortModule()

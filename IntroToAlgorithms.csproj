@@ -2,11 +2,8 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <StartupObject>IntroToAlgorithms.Program</StartupObject>
-    <AssemblyName>IntroToAlgorithms</AssemblyName>
-    <RootNamespace>IntroToAlgorithms</RootNamespace>
-    <Nullable>disable</Nullable>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
 </Project>
