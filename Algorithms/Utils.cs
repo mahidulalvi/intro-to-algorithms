@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace IntroToAlgorithms.Models.Algorithms.InsertionAlgorithms
+namespace IntroToAlgorithms.Algorithms
 {
-    class Utils
+    public class Utils
     {
         public Utils() { }
 

@@ -1,8 +1,9 @@
 ﻿using System;
+using IntroToAlgorithms.Algorithms.Insertion.Modules;
 
-namespace IntroToAlgorithms.Models.Algorithms.InsertionAlgorithms
+namespace IntroToAlgorithms.Algorithms.Insertion
 {
-    class InsertionAlgorithms
+    public class InsertionAlgorithms
     {
         public InsertionSortModule InsertionSortModule { get; set; }
         public BinaryAdditionModule BinaryAdditionModule { get; set; }
